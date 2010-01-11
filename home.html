@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+	<title>Home</title>
+
+	<link rel="stylesheet" type="text/css" href="style.css" />
+
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+	<script src="includes/checkall.js" type="text/javascript"></script>
+	<script type="text/javascript" language="javascript" src="includes/jquery.js"></script>
+	<script type="text/javascript" language="javascript" src="includes/jquery.dataTables.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+			$('#hometable').dataTable( {
+			"sDom" : 'ftirpl',
+			"aoColumns": [ null, null, null, { "bSortable": false }]
+			} );
+		} );
+	</script>
+
+</head>
+
+
+<body>
+
+
+<div id="navmenu">
+
+
+	<p><img src="includes/spyglasslogo.gif" alt="Spyglass"/></p>
+
+	<p>Spyglass</p>
+
+	<p class="jello"><a href="home.html">Home</a></p>
+
+	<p class="jello"><a href="processbreaks.html">Process</a></p>
+
+	<p class="jello"><a href="process.html">Requests</a></p>
+
+	<p class="jello"><a href="#help">Help</a></p>
+
+	<p class="jello"><a href="#myaccount">My Account</a></p>
+
+	<p class="align">Logged in as Ben Lickly (<a href="#signup">Log Out</a>)</p>
+
+</div>
+
+
+<div id="homemenu">
+
+
+<p>
+<a href="#dummy" class="export">Export Home</a>
+</p>
+
+<p>
+<form action="search.php" method="post" id="date">
+As of: <input type="text" name="search" value="1 January 2010" />
+
+</form>
+</p>
+
+</div>
+
+<div id="homedisplay">
+	
+	<form id="homeform">
+
+	<table id="hometable">
+
+	<div id="hometablemenu">
+
+		<p><a href="#dummy">Import Base</a></p>
+
+		<p><a href="#dummy">Import Other</a></p>
+
+		<p><a href="#dummy">Reconcile</a></p>
+
+		<p><a href="#dummy">Process</a></p>
+
+	</div>
+
+	<thead><tr>
+
+			<th>Status</th>
+
+			<th>Base Name</th>
+
+			<th>Other Name</th>
+
+			<th><input type="checkbox" name ="master" onclick="checkAll('homeform')"/> Select All</th>
+
+		</tr></thead>
+
+	
+		<tbody><tr>
+
+			<td>Needs Both</td>
+
+			<td>SafeCustody</td>
+
+			<td>vs. MoneyPenny</td>
+
+			<td><input type="checkbox"></td>
+
+		</tr>
+
+		<tr>
+
+			<td>Needs Both</td>
+
+			<td>SafeCustody</td>
+
+			<td>vs. Bonds United</td>
+
+			<td><input type="checkbox"/></td>
+
+		</tr>
+
+		<tr>
+
+			<td>Needs Both</td>
+
+			<td>SafeCustody</td>
+
+			<td>vs. SecureStocks</td>
+
+			<td><input type="checkbox"/></td>
+
+		</tr>
+
+		<tr>
+
+			<td class="firstcolumn">Needs Base</td>
+
+			<td>MoneyPenny</td>
+
+			<td>vs. BigBroker</td>
+
+			<td><input type="checkbox"/></td>
+
+		</tr>
+
+		<tr>
+
+			<td class="firstcolumn">Needs Base</td>
+
+			<td>MoneyPenny</td>
+
+			<td>vs. Dealers 'R Us</td>
+
+			<td><input type="checkbox" /></td>
+
+		</tr>
+
+		<tr>
+
+			<td class="firstcolumn">Needs Base</td>
+
+			<td>SecureStocks</td>
+
+			<td>vs. BigBroker</td>
+
+			<td><input type="checkbox" /></td>
+
+		</tr>
+
+		<tr>
+
+			<td class="firstcolumn">Ready!</td>
+
+			<td>SecureStocks</td>
+
+			<td>vs. RecordKeeper</td>
+
+			<td><input type="checkbox" /></td>
+
+		</tr>
+
+		<tr>
+
+			<td class="firstcolumn">Needs Both</td>
+
+			<td>SafeCustody</td>
+
+			<td>vs. MP RecKeeper</td>
+
+			<td><input type="checkbox"/></td>
+
+		</tr>
+
+		<tr class="shaded">
+
+			<td>Reconciled</td>
+
+			<td>SecureStocks</td>
+
+			<td>vs. Other Brokers</td>
+
+			<td><input type="checkbox" /></td>
+
+		</tr></tbody>
+
+	</table></form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+	<title>Process Breaks (sDom)</title>
+
+	<link rel="stylesheet" type="text/css" href="style.css" />
+
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+	<script src="includes/checkall.js" type="text/javascript"></script>
+	<script type="text/javascript" language="javascript" src="includes/jquery.js"></script>
+	<script type="text/javascript" language="javascript" src="includes/jquery.dataTables.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+			var upt = $('#unpairedtable').dataTable( {
+			  "sDom" : 'f<"tablenav">tirpl',
+			  "aoColumns": [ null, null, null, null, null, null, null, null, null, null, null, { "bSortable": false }],
+			  } );
+			// Add links to unpaired table
+			var unpairedNav = upt[0].parentElement
+			  .getElementsByClassName('tablenav')[0];
+			unpairedNav.innerHTML =
+			  '<a href="#dummy">Link</a>' +
+			  '<a href="#dummy">Ignore</a>' +
+			  '<a href="#dummy">Choose Columns</a>';
+
+			var pt = $('#pairedtable').dataTable( {
+			"sDom" : 'f<"tablenav">tirpl',
+			"aoColumns": [ null, null, null, null, null, null, null, null, null, null, null, {"bSortable": false }, ],
+
+			"fnRowCallback": function( aRow, aData, iDisplayRow, iTableRow) {
+				var baseRow = aRow.cloneNode(true);
+				var contraRow = aRow.cloneNode(true);
+				$('td:lt(14):gt(6)', baseRow).remove();
+				$('td:gt(13)', contraRow).remove();
+				$('td:lt(7)', contraRow).remove();
+				aRow.className = "hidden";
+				baseRow.className = "base";
+				contraRow.className = "contra";
+				var frag = document.createDocumentFragment();
+				frag.appendChild(baseRow);
+				frag.appendChild(contraRow);
+				return frag;
+			}
+
+			} );
+			// Add links to paired table
+			var pairedNav = pt[0].parentElement
+			  .getElementsByClassName('tablenav')[0];
+			pairedNav.innerHTML =
+			  '<a href="#dummy">Unlink</a>' +
+			  '<a href="#dummy">Ignore</a>' +
+			  '<a href="#dummy">Choose Columns</a>';
+
+		} );
+	</script>
+
+</head>
+
+
+<body>
+
+
+<div id="navmenu">
+
+
+	<p><img src="includes/spyglasslogo.gif" alt="Spyglass"/></p>
+
+	<p>Spyglass</p>
+
+	<p class="jello"><a href="home.html">Home</a></p>
+
+	<p class="jello"><a href="process.html">Process</a></p>
+
+	<p class="jello"><a href="process.html">Requests</a></p>
+
+	<p class="jello"><a href="#help">Help</a></p>
+
+	<p class="jello"><a href="#myaccount">My Account</a></p>
+
+	<p class="align">Logged in as Ben Lickly (<a href="#signup">Log Out</a>)</p>
+
+</div>
+
+
+<h1>SafeCustody vs. MoneyPenny</h1>
+
+
+<div id="breaksmenu">
+
+
+<p>
+<a href="#export" class="export">Export Breaks</a>
+</p>
+
+
+<p>As of: </p>
+<div id="calendar"><ul>
+	<li><a href="#01052010.html">5 January 2010</a></li>
+	<li><a href="#01042010.html">4 January 2010</a></li>
+	<li><a href="#01032010.html">3 January 2010</a></li>
+	<li><a href="#01022010.html">2 January 2010</a></li>
+	<li><a href="#01012010.html">1 January 2010</a></li>
+</ul></div>
+
+
+<p>Choose Status: </p>
+<div id="status"><ul>
+	<li><a href="#processbreaks.html">Breaks</a></li>
+	<li><a href="#processmatches.html">Matches</a></li>
+	<li><a href="#processignored.html">Ignored</a></li>
+</ul></div>
+
+</div>
+
+<div id="unpairedbreaks">
+
+	<h1>Unpaired Breaks</a></p>
+
+	<form id="unpairedfrm"><table id="unpairedtable">
+
+		<thead><tr class="headerrow">
+
+			<th>Source</th>
+
+			<th>Asset</th>
+
+			<th>Security ID</th>
+
+			<th>Maturity</th>
+
+			<th>CCY</th>
+
+			<th>Quantity</th>
+
+			<th>Market Value</th>
+
+			<th>Reason</th>
+
+			<th>Impact</th>
+
+			<th>Age</th>
+
+			<th>Comments</th>
+
+			<th><input type="checkbox" name ="master" onclick="checkAll('unpairedfrm')"> Select All</th>
+
+		</tr></thead>
+
+		<tbody><tr>
+
+			<td>SafeCustody</td>
+
+			<td>Swap</td>
+
+			<td>SWP333F2</td>
+
+			<td>7/15/2011</td>
+
+			<td>GBP</td>
+
+			<td>651,712.23</td>
+
+			<td>32,585.61</td>
+
+			<td>Position</td>
+
+			<td>7980.00</td>
+
+			<td>1</td>
+
+			<td><input type="text" name="search" /></td>
+
+			<td><input type="checkbox" /></td>
+
+		</tr>
+
+		<tr>
+
+			<td>SafeCustody</td>
+
+			<td>Option</td>
+
+			<td>3175563X1</td>
+
+			<td>2/12/2010</td>
+
+			<td>USD</td>
+
+			<td>65.00</td>
+
+			<td>6955.00</td>
+
+			<td>Position</td>
+
+			<td>12,321.00</td>
+
+			<td>5</td>
+
+			<td><input type="text" name="search" /></td>
+
+			<td><input type="checkbox" /></td>
+
+		</tr>
+
+		<tr class="contra">
+
+			<td>MoneyPenny</td>
+
+			<td>Swap</td>
+
+			<td>SWP335E9</td>
+
+			<td>7/18/2017</td>
+
+			<td>USD</td>
+
+			<td>100,000,000.00</td>
+
+			<td>83,000,000.00</td>
+
+			<td>Position</td>
+
+			<td>383,562.00</td>
+
+			<td>6</td>
+
+			<td><input type="text" name="search" /></td>
+
+			<td><input type="checkbox" /></td>
+
+		</tr></tbody>
+
+
+	</table></form>
+
+
+</div>
+
+<div id="pairedbreaks">
+
+	<h1>Paired Breaks</a></p>
+
+	<form id="pairedfrm"><table id="pairedtable">
+
+		<thead><tr class="headerrow">
+
+			<th>Source</th>
+
+			<th>Asset</th>
+
+			<th>Security ID</th>
+
+			<th>Maturity</th>
+
+			<th>CCY</th>
+
+			<th>Quantity</th>
+
+			<th>Market Value</th>
+
+			<th>Reason</th>
+
+			<th>Impact</th>
+
+			<th>Age</th>
+
+			<th>Comments</th>
+
+			<th><input type="checkbox" name ="master" onclick="checkAll('pairedfrm')"> Select All</th>
+
+		</tr></thead>
+
+		<tbody><tr>
+
+			<td>SafeCustody</td>
+
+			<td>Swap</td>
+
+			<td>99HZDH333</td>
+
+			<td>3/13/2019</td>
+
+			<td>JPY</td>
+
+			<td>135,000,000,000,000.00</td>
+
+			<td>267,300.00</td>
+
+			<td>MoneyPenney</td>
+
+			<td>Swap</td>
+
+			<td>99HZDH333</td>
+
+			<td>3/13/2019</td>
+
+			<td>JPY</td>
+
+			<td>135,000,000,000,000.00</td>
+
+			<td>137,700.00</td>
+
+			<td>Mkt Val</td>
+
+			<td>612,582.00</td>
+
+			<td>6</td>
+
+			<td><input type="text" name="search" /></td>
+
+			<td><input type="checkbox" /></td>
+
+		</tr>
+
+		<tr>
+
+			<td>SafeCustody</td>
+
+			<td>Swap</td>
+
+			<td>SWP335HZ</td>
+
+			<td>6/12/2017</td>
+
+			<td>EUR</td>
+
+			<td>75,000,000.00</td>
+
+			<td>72,750.00</td>
+
+			<td>MoneyPenny</td>
+
+			<td>Swap</td>
+
+			<td>SWP335HZ</td>
+
+			<td>6/12/2017</td>
+
+			<td>EUR</td>
+
+			<td>7,500,000.00</td>
+
+			<td>7,275.00</td>
+
+			<td>Position</td>
+
+			<td>72,750,000.00</td>
+
+			<td>9</td>
+
+			<td><input type="text" name="search" /></td>
+
+			<td><input type="checkbox" /></td>
+
+		</tr></tbody>
+
+
+	</table></form>
+
+
+</div>
+
+</body>
+</html>
