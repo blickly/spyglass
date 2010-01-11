@@ -1,0 +1,287 @@
+#unpairednav {
+
+background-image: url(http://giblar.com/games/click/link%20windwaker.JPG);
+
+background-repeat: no-repeat;
+
+background-position: left top;
+
+padding-top:68px;
+
+display: inline;
+
+}
+
+body {
+
+	font-family: Arial, Helvetica, Sans-Serif;
+
+	background: #F8F8FF;
+
+
+}
+
+
+
+#navmenu {
+
+	padding: 0em 1em 1em 0em;
+
+	margin: 0em 2em 2em 0em;
+
+	background: #cfc;
+
+	border: 1px solid #039;
+
+}
+
+
+#navmenu p {
+
+	display: inline;
+
+	font-size: 1.5ex;
+
+}
+
+
+
+#navmenu .jello {
+
+	font-size: 18px;
+
+	padding: 12px 16px;
+
+	color: #039;
+
+}
+
+
+#navmenu .align {
+
+	float: right;
+
+}
+
+
+#navmenu .jello a {
+
+	padding: 0px 32px;
+
+}
+
+
+#navmenu .jello a, #homedisplay a, #pairedbreaks a, #unpairedbreaks a {
+
+	text-decoration: none;
+
+	color: #039;
+
+	font-weight: normal;
+
+}
+
+
+#homedisplay a:hover, #pairedbreaks a:hover, #unpairedbreaks a:hover {
+
+	text-decoration: none;
+
+	background: #e8edff;
+
+	padding: 10px;
+
+}
+
+
+#navmenu .jello a:hover {
+
+	font-weight: bold;
+
+	text-decoration: underline;
+
+}
+
+
+#pairedmenu, #unpairedmenu {display: inline; }
+
+#calendar, #status {display: inline; color: black; text-decoration: none;}
+
+
+#homedisplay a, #homedisplay form, #pairedbreaks a, #pairedbreaks form, #unpairedbreaks a , #unpairedbreaks form {
+
+	font-size: 16px;
+
+	padding: 8px 16px;
+
+	display: inline;
+
+}
+
+
+#hometable_wrapper, #unpairedtable_wrapper, #pairedtable_wrapper {
+
+	color: #333366;
+
+	padding: 8px;
+
+	font-size: 12px;
+
+	font-weight: normal;
+
+}
+
+#homemenu p, #homemenu form, #breaksmenu p, #breaksmenu form {
+
+	color: #d60;
+
+	font-weight: bold;
+
+	font-size: 18px;
+
+	display: inline;
+
+	padding: 16px;
+
+	text-decoration: none;
+
+}
+
+
+#breaksmenu h1 {color: #333366; }
+
+
+#homemenu a:hover, #breaksmenu a:hover {
+
+	text-decoration: underline;
+
+}
+
+
+#pairedbreaks h1, #unpairedbreaks h1 {
+
+	font-size: 24px;
+
+	padding: 16px;
+
+	color: #d60;
+
+}
+
+
+#homemenu {
+
+	padding: 0px 0px 16px 0px;
+
+}
+
+
+#homedisplay, #pairedbreaks, #unpairedbreaks {
+
+	margin: 0px 0px 16px 0px;
+
+}
+
+
+#homemenu .export, #breaksmenu .export {
+
+	color: #080;
+
+	text-decoration: none;
+
+}
+
+
+#homedisplay table, #pairedbreaks table, #unpairedbreaks table {
+
+	margin: 8px;
+
+	border: 1px solid #69c;
+
+	border-spacing: 0px;
+
+	background: white;
+
+	clear: left;
+
+}
+
+
+#unpairedbreaks th, #pairedbreaks th, #homedisplay th {
+
+	font-size: 14px;
+
+	padding: 10px 8px;
+
+	color: #039;
+
+}
+
+#homedisplay td {
+
+	padding: 2px 70px;
+
+	color: black;
+
+}
+
+
+#unpairedbreaks td, #pairedbreaks td {
+
+	padding: 2px 4px;
+
+	color: black;
+
+}
+
+
+#homedisplay .contra, #pairedbreaks .contra, #unpairedbreaks .contra {
+
+	background: #e8edff;
+
+}
+
+
+#homedisplay .footer, #pairedbreaks .footer, #unpairedbreaks .footer {
+
+	font-size: 12px;
+
+	color: #333366;
+
+}
+
+
+#homedisplay .addrecon {
+
+	font-size: 16px;
+
+	display: block;
+
+}
+
+
+
+
+#hometable {
+
+	font-size: 12px;
+
+	border-collapse: collapse;
+
+
+}
+
+#pairedbreaks td, #unpairedbreaks td, #homedisplay td {
+
+	font-size: 12px;
+
+	border-width: 1px 0px 0px 0px;
+
+	border-style: dashed;
+
+}
+
+
+.sorting_asc { background: url('includes/sort_asc.jpg') no-repeat center right; cursor: pointer; }
+.sorting_desc { background: url('includes/sort_desc.jpg') no-repeat center right; cursor: pointer; }
+.sorting { background: url('includes/sort_both.jpg') no-repeat center right; cursor: pointer; }
+
